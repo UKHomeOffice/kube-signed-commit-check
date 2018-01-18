@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: signed-commit-check-service
+  name: signed-commit-check-service
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 4000
+  selector:
+    name: signed-commit-check
