@@ -1,0 +1,12 @@
+pipeline:
+  deploy:
+    image: quay.io/ukhomeofficedigital/kd:v0.7.0
+    secrets:
+      - kube_server_acp_ops
+      - kube_token_acp_ops
+    commands:
+    - apk update
+    - apk add curl
+    - scripts/deploy.sh
+    when:
+      event: [deployment]

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-external-ingress
+spec:
+  podSelector:
+    matchLabels:
+      name: signed-commit-check
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: ingress-external
+    - podSelector:
+        matchLabels:
+          name: ingress
+    ports:
+    - protocol: TCP
+      port: 4000
