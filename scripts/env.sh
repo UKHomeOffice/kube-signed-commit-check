@@ -2,7 +2,7 @@
 
 export DRONE_DEPLOY_TO=${DRONE_DEPLOY_TO:-acp-ops}
 export KUBE_NAMESPACE="signed-commit-check"
-export VERSION="v1.0.0"
+export VERSION="v1.0.1"
 
 case "${DRONE_DEPLOY_TO}" in
   acp-ops)
@@ -11,7 +11,7 @@ case "${DRONE_DEPLOY_TO}" in
     export KUBE_TOKEN="${KUBE_TOKEN_ACP_OPS}"
     ;;
   *)
-    echo "The environment: ${DRONE_DEPLOY_TO} does is not configured"
+    echo "The environment: ${DRONE_DEPLOY_TO} is not configured"
     exit 1
     ;;
 esac
