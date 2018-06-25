@@ -2,7 +2,7 @@
 
 export DRONE_DEPLOY_TO=${DRONE_DEPLOY_TO:-acp-ops}
 export KUBE_NAMESPACE="signed-commit-check"
-export VERSION="v1.0.1"
+export VERSION="v1.0.2"
 
 case "${DRONE_DEPLOY_TO}" in
   acp-ops)
